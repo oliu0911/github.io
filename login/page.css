@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(sunset.jpg) no-repeat ;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.Logo{
+    color: white;
+    user-select: none;
+    font-size: 30px;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 50px;
+
+}
+
+.navigation a:after{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: initial;
+}
+
+.navigation button{
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline:none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.7s;
+    left: 13px;
+    
+}
+
+.navigation button:hover{
+    color: black;
+    background-color: #fff;
+}
+
+
+.wallpaper{
+    position: relative;
+    width: 500px;
+    height: 450px;
+    border: 2px solid transparent;
+    background: transparent;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow:  2px 2px 1000px blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease, height .5s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.wallpaper.active-pop{
+    transform: scale(1);
+}
+
+.wallpaper.active-cancel{
+    transform: scale(0);
+}
+
+.wallpaper.active{
+    width: 600px;
+    height: 550px;
+    top: 38px;
+}
+
+.wallpaper.active .login-login{
+    transition: none;
+    transform: translate(-500px);
+}
+
+.wallpaper .login-login{
+    transition: transform .2s ease;
+    transform: translateX(0);
+}
+
+.wallpaper .login-register{
+    position: absolute;
+    transform: translate(500px);
+    transition: none;
+}
+
+.wallpaper.active .login-register{
+    transition: transform .2s ease;
+    transform: translateX(0);
+}
+
+
+.wallpaper .icon-close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+}
+
+.login-login{
+    text-align: center;
+}
+
+.login-register {
+    text-align: cetner;
+}
+
+.btns{
+    text-align: center;
+}
+
+.login-login h2{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    position: relative;
+    top: 5px;
+}
+
+.loginlink{
+    color: darkblue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginlink:hover{
+    text-decoration: underline;
+}
+
+.inputbox{
+    position: relative;
+    top: -10px;
+    width: 100%;
+    left: -35px;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 35px;
+
+}
+
+.inputbox input{
+    background: transparent;
+    outline:none;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.inputbox input:focus~label, .inputbox input:valid~label{
+    top: -5px;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    pointer-events: none;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.inputbox .icon{
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    font-size: 25px;
+}
+
+.inputbox input[type="mail"], .inputbox input[type="password"], input[type="text"]{
+    font-size: 20px;
+    
+}
+
+.btn{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 45px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 25px;
+    transition: .5s;
+    border-radius: 20px;
+    color: #fff;
+
+}
+
+.btn:hover{
+    width: 250px;
+    height: 55px;
+    background-color: white;
+    color: black;
+}
+
+.remenber{
+    user-select: none;
+    font-size: 1.2em;
+    accent-color: black;
+    color: black;
+    font-weight: 500;
+    margin: -15 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remenber input[type="checkbox"]{
+    outline: none;
+}
+
+.remenber label input{
+    accent-color: black;
+}
+
+.remenber a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+.register{
+    margin: 50px;
+    font-weight: 600;
+}
+
+.registerlink{
+    text-decoration: none;
+    color: darkblue;
+    font-weight: 600;
+}
+
+.registerlink:hover{
+    text-decoration: underline;
+
+}
